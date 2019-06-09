@@ -29,4 +29,17 @@ public class AdminService {
 	public DomesticLeagueEntity getPlayerDetailsByName(String playerName) {
 		return domesticLeagueRepository.getPlayerByName(playerName);
 	}
+	public String updateGoals(int playerId, int goals) {
+		DomesticLeagueEntity updatedDomesticLeagueEntity = domesticLeagueRepository.findById(playerId).get();
+		updatedDomesticLeagueEntity.setGoals(goals);
+		domesticLeagueRepository.save(updatedDomesticLeagueEntity);
+		return "goals updated successfully";
+	}
+	public String updateAssists(int playerId, int assists) {
+		DomesticLeagueEntity updatedDomesticLeagueEntity = domesticLeagueRepository.findById(playerId).get();
+		updatedDomesticLeagueEntity.setAssists(assists);
+		domesticLeagueRepository.save(updatedDomesticLeagueEntity);
+		return "Assists updated successfully";
+		
+	}
 }
