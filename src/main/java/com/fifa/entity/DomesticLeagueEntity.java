@@ -22,9 +22,6 @@ public class DomesticLeagueEntity {
 	private String playerName;
 	@Column(name = "shirt_number")
 	private int shirtNumber;
-	private int topicName;
-	private int key;
-	private int value;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "player_position")
